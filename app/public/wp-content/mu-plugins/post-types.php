@@ -1,5 +1,6 @@
-<?php 
-function pico() {
+<?php
+function pico()
+{
 
     // event post type
     register_post_type('event', array(
@@ -19,7 +20,7 @@ function pico() {
     ));
 
     //Program post type
-register_post_type('program', array(
+    register_post_type('program', array(
         'public' => true,
         'show_in_rest' => true,
         'labels' => array(
@@ -33,6 +34,19 @@ register_post_type('program', array(
         'has_archive' => true,
         'rewrite' => array('slug' => 'programs'),
         'supports' => array('title', 'editor')
+    ));
+    register_post_type('professor', array(
+        'public' => true,
+        'show_in_rest' => true,
+        'labels' => array(
+            'name' => 'Professor',
+            'add_new_item' => 'Add New Professor',
+            'edit item' => 'Edit Professor',
+            'all_items' => 'All Professors',
+            'singular_name' => 'Professor'
+        ),
+        'menu_icon' => 'dashicons-welcome-learn-more',
+        'supports' => array('title', 'editor', 'thumbnail')
     ));
 }
 
