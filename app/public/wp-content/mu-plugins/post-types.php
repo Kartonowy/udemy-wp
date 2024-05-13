@@ -1,7 +1,21 @@
 <?php
 function pico()
 {
-
+    register_post_type('campus', array(
+        'public' => true,
+        'show_in_rest' => true,
+        'labels' => array(
+            'name' => 'Campuses',
+            'add_new_item' => 'Add New Campus',
+            'edit item' => 'Edit Campus',
+            'all_items' => 'All Campuses',
+            'singular_name' => 'Campus'
+        ),
+        'menu_icon' => 'dashicons-location-alt',
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'campus'),
+        'supports' => array('title', 'editor', 'excerpt')
+    ));
     // event post type
     register_post_type('event', array(
         'public' => true,
