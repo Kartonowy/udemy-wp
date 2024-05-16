@@ -12,6 +12,8 @@ pageBanner([
         while (have_posts()) {
             the_post();
             $mapLoc = get_field('map_location');
+            print_r($mapLoc);
+            print_r(get_the_title());
         ?>
             <div data-lat="<?php echo $mapLoc['lat'] ?>" data-lng="<?php echo $mapLoc['lng'] ?>" class="marker">
                 <h3>

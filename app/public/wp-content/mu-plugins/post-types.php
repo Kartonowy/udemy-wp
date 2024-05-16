@@ -47,7 +47,7 @@ function pico()
         'menu_icon' => 'dashicons-awards',
         'has_archive' => true,
         'rewrite' => array('slug' => 'programs'),
-        'supports' => array('title', 'editor')
+        'supports' => array('title')
     ));
     register_post_type('professor', array(
         'public' => true,
