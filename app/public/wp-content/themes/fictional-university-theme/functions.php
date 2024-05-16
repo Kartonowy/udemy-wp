@@ -1,5 +1,18 @@
 <?php
+
+require get_theme_file_path('/inc/routes.php');
 loadEnv();
+
+add_action('rest_api_init', 'univ_rest');
+
+function univ_rest()
+{
+    register_rest_field("post", 'author_name', array(
+        "get_callback" => function () {
+            return get_the_author();
+        }
+    ));
+}
 
 function pageBanner($args = NULL)
 {

@@ -240,7 +240,7 @@ class Search {
           <h2 class="search-overlay__section-title">General Information</h2>
           ${combined.length ? '<ul class="link-list min-list">' : "<p>No general information found</p>"}
           
-          ${combined.map(item => `<li><a href="${item.link}">${item.title.rendered}</a></li>`).join("")}
+          ${combined.map(item => `<li><a href="${item.link}">${item.title.rendered}</a>${item.author_name ? "by " + item.author_name : ""}</li>`).join("")}
           ${combined.length ? "</ul>" : ""}
         `;
       this.spinner = false;

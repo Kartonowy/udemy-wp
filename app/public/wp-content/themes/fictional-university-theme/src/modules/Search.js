@@ -68,7 +68,9 @@ class Search {
           ${combined
             .map(
               (item) =>
-                `<li><a href="${item.link}">${item.title.rendered}</a></li>`
+                `<li><a href="${item.link}">${item.title.rendered}</a>${
+                  item.author_name ? "by " + item.author_name : ""
+                }</li>`
             )
             .join("")}
           ${combined.length ? "</ul>" : ""}
