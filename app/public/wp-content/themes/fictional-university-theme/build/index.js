@@ -311,12 +311,14 @@ class Search {
     document.querySelector("body").classList.remove("body-no-scroll");
     this.overlay = false;
   }
-  openOverlay() {
+  openOverlay(e) {
     this.searchOverlay.classList.add("search-overlay--active");
     this.searchField.value = "";
     setTimeout(() => this.searchField.focus(), 301);
     document.querySelector("body").classList.add("body-no-scroll");
     this.overlay = true;
+    e.preventDefault();
+    return false;
   }
   insertOverlay() {
     document.body.innerHTML += `

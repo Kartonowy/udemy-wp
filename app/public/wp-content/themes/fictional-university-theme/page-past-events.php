@@ -25,7 +25,7 @@ pageBanner([
   ));
   while ($pastEvents->have_posts()) {
     $pastEvents->the_post();
-    get_template_part('/templates/event-template');
+    get_template_part('/templates/content-event');
   }
   echo paginate_links(array(
     'total' => $pastEvents->max_num_pages
